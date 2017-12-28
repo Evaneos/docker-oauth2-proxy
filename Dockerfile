@@ -12,7 +12,7 @@ ENV OAUTH2_PROXY_VERSION_PATCH 2.2.0
 
 RUN set -ex \
     \
-	&& apk add --no-cache --virtual .fetch-deps ca-certificates curl \
+	&& apk add --no-cache --virtual .fetch-deps curl \
 	&& curl -L "https://github.com/bitly/oauth2_proxy/releases/download/v$OAUTH2_PROXY_VERSION_MINOR/oauth2_proxy-$OAUTH2_PROXY_VERSION_PATCH.linux-amd64.go$GOLANG_VERSION.tar.gz" \
 	| tar -xz --strip-components=1 -C /usr/local/bin  \
   	&& chmod +x /usr/local/bin/oauth2_proxy \
